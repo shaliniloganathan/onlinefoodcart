@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<style>
+    :root{
+        --white:white;
+        --light:lightblue;
+        --orange:orange;
+
+    }
+    body{
+        background-color: var(--orange);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+       
+    }
+    .container{
+        width: 1200px;
+        border: 1ps solid var(--white);
+        max-width: 100%;
+        margin: 50px auto 0;
+        display: grid;
+        grid-template-columns: 200px auto 300px;
+        padding: 20px;
+        border-radius: 30px;
+        min-height: 80vh;
+    }
+    .container .menu{
+        background-color: var(--white);
+        border-bottom-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+    }
+    .container .cart{
+        background-color: var(--white);
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+    .container .center{
+        background-color: var(--light);
+        border-left:1px solid var(--light) ;
+        border-right: 1px solid var(--light);
+    }
+    .menu .logo{
+        padding: 20px;
+        font-family: 'Lobster',cursive;
+        font-size: xx-large;
+        height: 40px;
+    }
+ .menu .logo span{
+    color: var(--orange);
+ }
+ .menu ul {
+    padding:20px 0 20px 20px ;
+    list-style: none;
+    border-bottom: 1px solid var(--light);
+ }
+ .menu ul li{
+    padding:10px 0;
+ }
+ .menu ul li i{
+    margin-right: 12px;
+ }
+ .menu ul li.active{
+    color:var(--orange);
+    border-right: 2px solid var(--orange);
+ }
+ .menu ul li :hover{
+    color: var(--orange);
+    border-right: 2px solid var(--orange);
+ }
+
+ .center .search{
+    background-color:var(--white);
+    padding: 20px;
+    height: 40px;
+ }
+ .center .search .form{
+    width: max-content;
+    border: 1px solid var(--light);
+    border-radius: 20px;
+    padding-left: 15px;
+    color: var(--light);
+ }
+ .center .search .form input{
+    border: none;
+    padding: 0 10px;
+    outline: none;
+    width: 100px;
+ }
+ .center .search .form button{
+    border: none;
+    padding: 10 20px;
+    border-radius: 20px;
+    background-color: var(--orange);
+    color:var(--light) ;
+ }
+ .center h2{
+    padding: 20px;
+ }
+ .center .list{
+    padding: 0 20px 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 20px;
+    row-gap: 20px;
+ }
+  .item .img img{
+    background-color: var(--white);
+    display:grid;
+    grid-template-columns: 20% auto;
+    padding: 10px;
+    column-gap: 20px;
+    border-radius: 20px;
+    width: 100px;
+ }
+ .item .img{
+    background-color: var(--light);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+ } 
+ .item .content .title{
+    font-weight: bold;
+ }
+ .item .content .des{
+    font-size: small;
+    opacity: 0.7;
+    margin-top: 5px;
+ }
+ .item .content .price{
+    color: var(--orange);
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: small;
+    margin-top: 5px;
+ }
+ .item .count{
+    width: 50px;
+    border-radius: 10px;
+    margin-right: 10px;
+    padding: 3px 5px;
+    border: 1px solid var(--light);
+    outline: none;
+    margin-top: 5px;
+ }
+ .item .content .add{
+    margin-top: 5px;
+    background-color: var(--orange);
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 10px;
+ }
+ .item .content .remove{
+    padding:5px;
+    border: none;
+    margin-top: 5px;
+    border-radius: 10px;
+    display: none;
+ }
+ .cart .name{
+    padding: 20px;
+    height: 40px;
+    font-weight: bold;
+    font-size: xx-large;
+    border-bottom: 1px solid var(--light);
+ }
+ /* .danger{
+    box-shadow:0 10px 10px var(--orange);
+    transform: translate(0,-10px);
+ } */
+ .cart .item{
+transition: 0.5s;
+border-bottom: 1px solid var(--light);
+ }
+ .cart .add{
+    display: none;
+ }
+ .cart .remove{
+    display: inline-block;
+ }
+ </style>
+<body>
+    <div class="container">
+        <div class="menu">menu
+ <div class="logo">
+    <span>dev</span>
+ </div>
+ <ul>
+    <li><i class="fa-solid fa-house"></i>Home</li>
+    <li><a href="../login.html"><i class="fa-solid fa-user"></i>User</a></li>
+    <li><i class="fa-solid fa-heart"></i>Favourite</li>
+ </ul>
+ <ul>
+    <li><i class="fa-solid fa-house"></i>Tiktok</li>
+    <li><i class="fa-solid fa-user"></i>Facebook</li>
+    <li><i class="fa-solid fa-heart"></i>Instagram</li>
+ </ul>
+
+        </div>
+        <div class="center">center
+            <div class="search">
+                <div class="form">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="search">
+                    <button>search</button>
+                </div>
+            </div>
+            <h2>products</h2>
+            <div class="list">
+                <div class="item" data-key="1">
+                    <div class="img">
+                        <img src="../../../assets/images/2.jpg">
+                    </div>
+                    <div class="content">
+                        <div class="title">product name</div>
+                        <div class="des">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam, omnis?
+                        </div>
+                        <div class="price">$20</div>
+                        <input type="number" class="count" min="1" value="1">
+                        <button class="add">addtocart</button>
+                        <button class="danger" onclick="remove(1)"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+                <div class="item" data-key="2">
+                    <div class="img">
+                        <img src="../../../assets/images/3.jpg">
+                    </div>
+                    <div class="content">
+                        <div class="title">product name</div>
+                        <div class="des">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam, omnis?
+                        </div>
+                        <div class="price">$20</div>
+                        <input type="number" class="count" min="1" value="1">
+                        <button class="add">addtocart</button>
+                        <button class=" danger" onclick="remove(2)"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+                <div class="item" data-key="3">
+                    <div class="img">
+                        <img src="../../../assets/images/4.jpg">
+                    </div>
+                    <div class="content">
+                        <div class="title">product name</div>
+                        <div class="des">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam, omnis?
+                        </div>
+                        <div class="price">$20</div>
+                        <input type="number" class="count" min="1" value="1">
+                        <button class="add">addtocart</button>
+                        <button class="danger" onclick="remove(3)" ><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div><div class="item" data-key="4">
+                    <div class="img">
+                        <img src="../../../assets/images/1.jpg">
+                    </div>
+                    <div class="content">
+                        <div class="title">product name</div>
+                        <div class="des">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam, omnis?
+                        </div>
+                        <div class="price">$20</div>
+                        <input type="number" class="count" min="1" value="1">
+                        <button class="add">addtocart</button>
+                        <button class="danger" onclick="remove(4)" ><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart">
+            <div class="name">Cart</div>
+            <div class="listcart">
+
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let list=document.querySelectorAll(".list .item");
+    list.forEach(item=>{
+        item.addEventListener("click",function(event){
+            if(event.target.classList.contains('add')){
+                var itemnew=item.cloneNode(true);
+                let checkisset=false;
+                let listcart=document.querySelectorAll('.cart .item');
+                listcart.forEach(cart=>{
+                    if(cart.getAttribute('data-key')==itemnew.getAttribute('data-key')){
+                    checkisset=true;
+                    cart.classList.add('danger');
+                    setTimeout(function(){
+                        cart.classList.remove('danger');
+                    },1000)
+                    }
+                   
+
+                })
+                if(checkisset == false){
+                    document.querySelector('.listcart').appendChild(itemnew);
+                }
+              
+
+            }
+        })
+    })
+    function remove($key){
+    let listcart = document.querySelectorAll('.cart .item');
+    listcart.forEach(item => {
+        if(item.getAttribute('data-key') == $key){
+            item.remove();
+            return;
+        }
+    })
+}
+</script>
+</html>

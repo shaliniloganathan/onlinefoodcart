@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="productslist">
+        
+    </div>
+
+    <input id="input">
+    <button id="button"  onclick="factorial()">submit</button>
+    <p id="get"></p>
+</body>
+<script>
+  let products =[
+    {name:"mobile",image:"assets/images/img8.jpeg",price:10},
+
+    {name:"speaker",image:"assets/images/img6.jpeg",price:20},
+    {name:"lap",image:"assets/images/img7.jpeg",price:30}
+
+
+  ]
+
+  let numbers =[1,2,3,4,5];
+  let first = numbers[0];
+  let middle=numbers[2];
+  let last = numbers.length -0;
+  console.log(first)
+  console.log(middle)
+  console.log(last)
+  console.log(first,middle,last)
+  // let final =join
+  
+
+  let mixeddatatypes =[1,
+  "lini",
+  20,
+  true,
+  9.8,
+  {country:'india',city:'chennai'},
+  {skills:['frontend','database','backend']}
+
+  ];
+  console.log(mixeddatatypes.length)
+
+  let itcompanies =['facebook','oracle','google','twitter','walmart']
+  // console.log(itcompanies.length)
+
+  // itcompanies.forEach(element => {
+  //   console.log(element )
+  // });
+  // itcompanies.forEach(myfuntion)
+
+  // function myfuntion(item,index){
+  //  let get = itcompanies + " ," +index;
+  //  console.log(get)
+  // }
+itcompanies.forEach(element=>{
+  let first = element.charAt(0).toLocaleUpperCase();
+  console.log(first+element.slice(1))
+  })
+console.log("these are the "+itcompanies+"big companies")
+  
+  if(itcompanies.includes("amazon") == itcompanies){
+    console.log("yes" )
+  }else{
+    console.log("no")
+  }
+
+  // itcompanies.forEach(element=>{
+  //  let a = itcompanies.slice();
+  //  let b = itcompanies.includes("o");
+  //  if(b.includes("o")){
+  //   console.log(b)
+  //  }
+  // })
+
+
+//   function remove(text){
+//   let punctuation =" /\,?.!";
+//   var newtext=text.replace(punctuation,"");
+//   return newtext;
+// }
+
+
+  
+// console.log(remove(text));
+
+function removepunctuation(text){
+  return text.replace('/[].,?',"");
+}
+
+
+let sentence =
+'I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.'
+let result = removepunctuation(sentence);
+console.log(result); 
+
+console.log(result.split(","));
+console.log(result.length)
+
+
+const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey']
+ shoppingCart.unshift("meat") ;
+ shoppingCart.push("sugar")
+ 
+
+console.log(shoppingCart);
+
+
+const countries = ["Nigeria", "Ghana", "Rwanda","ethiopia"];
+
+  if(countries.includes('ethiopia') == countries){
+    console.log("yes it exists")
+  }else{
+   const add =countries.push("ethiopia");
+   console.log(add);
+  }
+
+
+countries.unshift("Kenya");
+
+
+
+const frontEnd = ['HTML', 'CSS', 'JS', 'React', 'Redux']
+const backEnd = ['Node','Express', 'MongoDB']
+const fullstact = frontEnd.concat(backEnd);
+console.log(fullstact)
+
+
+ ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+ages.sort();
+
+console.log(Math.max(...ages));
+console.log(Math.min(...ages));
+
+function calculate(array){
+  var total=0;
+  var count=0;
+  array.forEach(function(item,index){
+    total+=item;
+    count++;
+  });
+  return total/count;
+}
+// console.log(calculate(ages))
+// // const num=parseInt(prompt("enter number"))
+// for(let i=2;i<=10;i++){
+//   const result = i*num;
+//    console.log(`${num}*${i} =${result}`)
+// }
+for(i=0;i<=10;i++){
+  console.log(i);
+}
+// let i=0
+// while(i<=10){
+//   console.log(i);
+//   i++
+// }
+// const n = 5;
+// let str = '';
+
+// for (let i = 1; i <= n; i++) {
+    
+//     for (let j = 1; j <= i; j++) {
+//         str += '* ';
+//     }
+//     str += '\n';
+// }
+// console.log(str);
+
+let n = 5;
+let str = "";
+for(let i=1;i<=n;i++){
+  for(let j=1;j<=i;j++){
+    str +="#";
+  }
+  str+="\n";
+}
+console.log(str);
+
+
+let rows =5;
+for(let i=1;i<=rows;i++){
+  for(let k=1;k<=(rows-i);k++){
+  document.write("&nbsp")
+  }
+  for(let j=1;j<=i;j++){
+    document.write("&nbsp")
+    document.write("* ")
+  }
+  document.write("<br/>")
+}
+
+for(let i=0;i<=10;i++){
+  num=i*i;
+  document.write(`${i}*${i}=${num}`)
+  document.write("<br/>")
+}
+
+for(i=0;i<=10;i++){
+document.write(i);
+
+
+num=i*i;
+document.write(`${i}*${i}=${num}`);
+
+
+
+num1=i*i*i;
+document.write(`${i}*${i}*${i}=${num1}`);
+}
+
+for(let i=0;i<=100;i++){
+  if(i%2!==0){
+    console.log(i)
+  }
+}
+let sum=0;
+
+for(let i=0;i<=100;i++){
+  sum+=i;
+  if(i%2==0){
+    console.log(sum) 
+  }
+
+}
+
+// const randomId = function(length = 6) {
+//   return Math.random().toString(36).substring(2, length+2);
+// };
+function oddoreven(arr,a){
+  let even=0;
+  let odd=0;
+  for(let i=0;i<=n;i++){
+    if(i%2==0){
+      even+=arr[i]
+    }else{
+      odd+=arr[i]
+    }
+    document.write("even num is : "+even);
+    
+    document.write( "<br/> "+ "odd num is : " + odd);
+  }
+  
+}
+
+let arr=[1,2,3,4,5,6]
+  let a =arr.length
+  oddoreven(arr,n)
+
+  function randomUniqueNum(range, outputCount) {
+
+let arr = []
+for (let i = 1; i <= range; i++) {
+  arr.push(i)
+}
+
+let result = [];
+
+for (let i = 1; i <= outputCount; i++) {
+  const random = Math.floor(Math.random() * (range - i));
+  result.push(arr[random]);
+  arr[random] = arr[range - i];
+}
+
+return result;
+}
+console.log(result)
+
+
+
+const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz/.,;#$!@0123456789';
+
+function generatingstring(length){
+  let result='';
+  let characterlength=characters.length;
+  for(let i=0;i<length;i++){
+    result +=characters.charAt(Math.floor(Math.random() * characterlength))
+  }
+  return result
+}
+console.log(generatingstring(5))
+
+document.write("<br/>")
+
+function random(min,max){
+  return Math.floor(Math.random()*(max-min)+min);
+
+}
+document.write(random(1,100));
+
+
+const country= [
+  'Albania',
+  'Bolivia',
+  'Canada',
+  'Denmark',
+  'Ethiopia',
+  'Finland',
+  'Germany',
+  'Hungary',
+  'Ireland',
+  'Japan',
+  'Kenya'
+]
+
+let newarray =[];
+
+  for(let i=0;i<country.length;i++){
+  newarray.push(country[i])
+  }
+
+console.log(newarray)
+
+let another=[]
+for(let i=0;i<country.length;i++){
+  another.push(newarray[i])
+}
+console.log(another)
+
+// let array =["ALBANIA", "BOLIVIA", "CANADA", "DENMARK", "ETHIOPIA", "FINLAND", "GERMANY", "HUNGARY", "IRELAND", "JAPAN", "KENYA"]
+// let count =array.split
+
+
+
+// console.log(element)
+
+
+
+// const coun= [
+//  [ 'Albania',
+//   'Bolivia',
+//   'Canada',
+//   'Denmark',
+//   'Ethiopia',
+//   'Finland',
+//   'Germany',
+//   'Hungary',
+//   'Ireland',
+//   'Japan',
+//   'Kenya'
+// ]
+// ];
+// console.log(coun)
+
+
+// let c =['Finland','Ireland', 'Iceland'];
+// for(let i=0;i<c.length;i++){
+//   let a =[]
+//   if(c.indexOf === land){
+//     return c
+//   }else{
+    
+//   }
+  
+// }
+// console.log(a)
+// function longest(country){
+//   let largest='';
+//   for(let i=0;i<country.length;i++){
+//     if(country[i].length > largest.length){
+//       largest = country[i]
+//     }
+//   }
+//   return largest;
+// }
+const  places = [
+  'Albania',
+  'Bolivia',
+  'Canada',
+  'Denmark',
+  'Ethiopia',
+  'Finland',
+  'Germany',
+  'Hungary',
+  'Ireland',
+  'Japan',
+  'Kenya'
+]
+
+
+const similar =places.filter(p=>p.includes("land"));
+console.log(similar);
+
+
+// for(let i=0;i<places.length;i++){
+// let found =places.find((element)=>element.includes("land"));
+// console.log(found)
+// }
+
+
+
+const ite =['Albania', 'Bolivia','Ethiopi','kenya'];
+
+const matches =ite.filter(s=>s.includes("ia"));
+console.log(matches)
+
+
+
+function getLongestWord(str){
+  let words = str.split(' ');
+  let maxLength = 0;
+  let longestWord = '';
+
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].length > maxLength) {
+      maxLength = words[i].length;
+      longestWord = words[i];
+    }
+  }
+
+  console.log(maxLength);
+  console.log(longestWord);
+
+}
+getLongestWord;
+
+
+
+function longest(array){
+  var maxstr=array[0].length;
+  var ans=array[0];
+  for(var i=1;i<array.length;i++){
+    var maxi=array[i].length;
+    if(maxi >=maxstr){
+      ans=array[i];
+      maxstr=maxi
+    }
+  }
+  return ans
+}
+console.log(longest(['Albania', 'Bolivia','Ethiopi','kenya']))
+
+
+document.write("<br/>")
+const items =['Albania', 'Bolivia','Ethiopi','kenya'];
+const match=items.filter(a=> a.length ===5);
+document.write("5 letter word"+match)
+
+
+// const webTechs = 
+
+// function long(array){
+//   var len = array[0].length;
+//   var ans =array[0];
+//   for(var i=1;i<array.length;i++){
+//     var big = array[i].length;
+//     if(big >= len){
+//       ans = array[i];
+//       len=big;
+//     }
+//   }
+//   return ans
+// }
+// console.log(long([
+//   'HTML',
+//   'CSS',
+//   'JavaScript',
+//   'React',
+//   'Redux',
+//   'Node',
+//   'MongoDB'
+// ]))
+
+// const names =["HTML", "CSS", "JS", "React", "Redux", "Node", "Express", "MongoDB"];
+// for(i=0;i<=names.length;i++){
+//   console.log(names[i])
+// // }
+
+// const fruits = ['banana', 'orange', 'mango', 'lemon'];
+// let ar=[];
+// for(let i=first.length -1; i>=0 ;i--){
+//   ar.push(fruits[i])
+// }
+// console.log(ar)
+
+
+// const fullStack = [
+//     ['HTML', 'CSS', 'JS', 'React'],
+//     ['Node', 'Express', 'MongoDB']
+  // ]
+
+  function fullname(){
+let name="shalini"
+let fullname =name;
+return fullname
+  }
+  console.log(fullname())
+
+function fulname(first,last){
+  let name = first+last;
+  return name
+}
+console.log(fulname("shalini","l"))
+
+
+function add(one,two){
+  let sum = one+two
+  return sum;
+
+}
+console.log(add(5,5))
+
+function areaofrectangle(length,width){
+let area = 2**length+width;
+return area
+}
+console.log(areaofrectangle(4,4))
+
+function circle(r){
+  let area = Math.PI*r*r;
+  return area
+}
+console.log(circle(4))
+
+
+// function checkseason(months){
+//   let season = ("Autumn","Winter","Spring","Summer")
+//   return season;
+// }
+// console.log(months[0])
+var obj={
+name:"coco",
+legs:4,
+color:"black",
+age:1,
+foodchart :[
+ "egg",
+"milk"
+]
+};
+obj.food ="pedi";
+obj.foodchart.push("rice")
+console.log(obj)
+
+console.log(obj.foodchart)
+
+
+var o=new Object();
+console.log(o);
+
+
+function ispalindrome(string){
+  const split = string.split('');
+  const reverse=split.reverse();
+  const converttostring=reverse.join('');
+  if(string === converttostring){
+    console.log("palindrome")
+  }else{
+    console.log("not a palindrome")
+  }
+}
+const string =prompt("enter number")
+ispalindrome(string)
+
+
+const name="shalini";
+const split=name.split('');
+const reverse=split.reverse('');
+const joinstr=reverse.join('');
+console.log(joinstr)
+
+// let A= [1,2,3,4,5,6,,7,8,9,10];
+// function filter(A){
+// let even =[]
+// for(let i=1;i<A.length;i++){
+// if(A%2==0){
+//   return(even.push(A[i]))
+// }
+// }
+// }
+//  console.log(filter(A));
+
+//  function finditeven(){
+  
+//   for(let i=0;i<=10;i++){
+//     if(i%2==0){
+//       console.log(i ,"even numbers")
+// //     }
+//   }
+//  }
+//  finditeven(i)
+
+// function fact(num){
+  
+ 
+//   // if(num <0){
+//   //   return -1
+//   // }
+// if(num == 0){
+// return 1
+//   }else{
+//     return num*fact(num-1)
+    
+
+//   }
+// }
+// function factorial(){
+//   let value = document.getElementById("input").value;
+//   let v = fact(num);
+//   document.getElementById("get").innerHTML= "factorial is"+ num + v;
+// }
+
+// // console.log(factorial(3))
+
+function randomletter(){
+  const name="shanvi";
+  return name[Math.floor(Math.random()*name.length)]
+}
+console.log(randomletter())
+
+let count=5;
+let amount=95;
+let total =`you have ${count} items in your cart your bill amount is ${amount}`;
+console.log(total)
+
+  let arr3=[[1,3,4],[3,4,5],[7,8,9]];
+  console.log(arr3[1][2])
+
+   numb=[5,8,10,7,9,11]
+  
+  numb.splice(3,3,'5','7','111')
+  
+
+  numb.unshift(100)
+  numb.push(200)
+  numb.splice(4,0,0);
+  console.log(numb)
+
+
+  
+</script>
+</html>

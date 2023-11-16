@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const xhr = new XMLHttpRequest();
+        // xhr.open(method,url);
+        // xhr.responseType ='json';
+        // xhr.send();
+
+        // xhr.onload=()=>{
+        //     console.log(xhr.response);
+        // }
+
+
+
+
+        // Example POST method implementation:
+// async function Postdata(url = '', object = {}) {
+//   const response = await fetch(url, {
+//     method: 'POST', 
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify(object)
+//   });
+//   return response.json(); 
+// }
+
+// Postdata('https://example.com/answer', { name: "Riya"})
+//   .then((data) => {
+//     console.log(data); 
+//   });
+
+
+        // const sendrequest = (method,url)=>{
+        //     const promise=new promise((resolve,reject)=>{
+        //         const xhr= new XMLHttpRequest();
+        //         xhr.open(method,url);
+        //         xhr.responseType='json';
+        //         xhr.onload=()=>{
+        //             if(xhr.status>=400){
+        //                 reject(xhr.response)
+        //             }
+        //                 resolve(xhr.response);
+                    
+        //         };
+        //         xhr.send();
+        //     });
+        //     return promise
+        // };
+        // const getdata=async()=>{
+        //     try{
+        //         const res=await sendrequest('get','https://rapidapi.com/guides/api/rest');
+        //         console.log(res);
+        //     }catch(err){
+        //         console.log(err);
+        //     }
+        // };
+        // getdata()
+
+
+
+//         let array =[{name:'shalini',grade:'a',age:20},{name:'kavin',grade:"a",age:'19'}];
+//         // let string=JSON.(array);
+//         array.forEach((arr)=>{
+//             let str=`name of the student is ${array.name} grade is${array.grade} age${array.age}`
+//             console.log(str);
+//         })
+//         // localStorage.setItem("array",string)
+
+//         let scores = [12, 55, 70];
+
+// scores.forEach((score, index, array) => {
+//   console.log(score);
+
+// });
+
+var staffsDetails = [
+  { name: "Jam Josh", age: 44, salary: 4000, currency: "USD" },
+  { name: "Justina Kap", age: 34, salary: 3000, currency: "USD" },
+  { name: "Chris Colt", age: 37, salary: 3700, currency: "USD" },
+  { name: "Jane Doe", age: 24, salary: 4200, currency: "USD" }
+];
+
+var total =0;
+for(var i=0;i<staffsDetails.length;i++){
+    total+=staffsDetails[i].salary;
+}
+console.log("the total of salary is ",total);
+
+
+
+var array = [
+    {name: 'x', id: 1},
+    {name: 'y', id: 2},
+    {name: 'z', id: 3},
+];
+array.forEach((arr)=>{
+    let str=`${array.name} id is ${array.id}`
+    console.log(str)
+})
+
+localStorage.setItem("array",String)
+    </script>
+
+</body>
+</html>

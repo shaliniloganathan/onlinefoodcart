@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./cart.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card" id="item1">
+            <img src="../../assets/images/img6.jpeg">
+            <div class="title">speaker</div>
+            <div>
+                <label id="price">price :200</label>
+                
+            </div>
+            <button onclick="addtocart(item1)">addtocart</button>
+        </div>
+        <div class="card" id="item2">
+            <img src="../../assets/images/img7.jpeg">
+            <div class="title">speaker</div>
+            <div>
+                <label>price :$209</label>
+                
+            </div>
+            <button onclick="addtocart(item2)">addtocart</button>
+        </div>
+        <div class="card" id="item3">
+            <img src="../../assets/images/img8.jpeg">
+            <div class="title">speaker</div>
+            <div>
+                <label>price :$209</label>
+                
+            </div>
+            <button onclick="addtocart(item3)">addtocart</button>
+        </div>
+        <div class="card" id="item4">
+            <img src="../../assets/images/img9.jpeg">
+            <div class="title">speaker</div>
+            <div>
+                <label>price :$209</label>
+                
+            </div>
+            <button onclick="addtocart(item4)">addtocart</button>
+        </div>
+    </div>
+    <div class="cart" id="cart">
+        <div class="title">cart</div>
+        <div id="title"></div>
+        <div id="increment-count">
+            <input type="image" id="up-arrow" src="up_arrow.png" onclick="increase()"/>
+          </div>
+          <div id="total-count">
+        </div>
+        <div id="decrement-count">
+          <input type="image" id="down-arrow" src="down_arrow.png" />
+        </div>
+
+    </div>
+</body>
+
+<script>
+    var additemid=0;
+    function addtocart(item){
+        additemid=1;
+        // Select increment and decrement buttons
+const incrementCount = document.getElementById("increment-count");
+const decrementCount = document.getElementById("decrement-count");
+
+// Select total count
+const totalCount = document.getElementById("total-count");
+
+// Variable to track count
+var count = 0;
+
+// Display initial count value
+totalCount.innerHTML = count;
+
+// Function to increment count
+const handleIncrement = () => {
+  count++;
+  totalCount.innerHTML = count;
+};
+
+// Function to decrement count
+const handleDecrement = () => {
+  count--;
+  totalCount.innerHTML = count;
+};
+var extra=0;
+function increase(){
+    increase = 200
+    sumprice=increase+extra;
+    document.getElementById("total-count").innerHTML='rupees'+sumprice
+}
+
+
+// Add click event to buttons
+incrementCount.addEventListener("click", handleIncrement);
+decrementCount.addEventListener("click", handleDecrement);
+    var selecteditem=document.createElement('div');
+    selecteditem.classList.add('cartimg');
+    selecteditem.setAttribute('id',additemid);
+    var img = document.createElement('img');
+    img.setAttribute('src',item.children[0].currentSrc);
+    var title =document.createElement('div');
+    document.querySelector(".title").innerHTML;
+    title.innerText=item.children[1].innerHTML;
+    var cartitems=document.getElementById('title');
+    selecteditem.append(img);
+    selecteditem.append(title)
+    cartitems.appendChild(selecteditem);
+
+    }
+</script>
+</html>
+https://codepen.io/h26k2/pen/mxpvpa
+https://codepen.io/irwingb1979/pen/poWpzPX
+https://codepen.io/Dimasion/details/oBoqBM
+
+

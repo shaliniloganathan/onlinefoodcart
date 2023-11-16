@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./onlinecart.css">
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js
+    "></script>
+</head>
+<script>
+     	function Delete(e){
+			let items = [];
+			JSON.parse(localStorage.getItem('items')).map(data=>{
+				if(data.id != e.parentElement.parentElement.children[0].textContent){
+					
+					items.push(data);
+
+				}
+			});
+			localStorage.setItem('items',JSON.stringify(items));
+        };
+</script>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="">CakeLicious</a>
+        
+        </div>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">contact</a></li>
+            <li><a href="">service</a></li>
+            <li><a href="../../login.html">login</a></li>
+
+        </ul>
+        <div class="menu">
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+
+        </div>
+
+    </nav>
+
+    <br><br><br>
+    <div class="container">
+
+
+
+
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="../../../../assets/images/coursel1.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="../../../../assets/images/cake1.jpg" class="d-block w-100" alt="...">
+                <div class="header">
+                    <h2> Register here to get a free coupon<br>
+                    then login to you account to avail it....  <a href="../../../project2/registration.html">registration</a></h2>
+               
+              </div>
+              <!-- <div class="carousel-item">
+                <img src="../../../../assets/images/coursel3.jpg" class="d-block w-100" alt="...">
+            </div> -->
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+       
+        
+        </div>
+        
+        <div class="iconshopping">
+            <p>0</p>
+            <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+        <br>
+        
+        <div class="products">
+     <div class="items">
+        <div class="center">
+        <p>red velvet</p>
+        <img src="../../../../assets/images/1.jpg">
+        <p class="price">200</p>
+        <p class="des">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi, sit!</p>
+        <a href="#" title="add to cart" class="btn">Add to cart</a> 
+    </div>
+        </div>
+     <div class="items">
+        <div class="center">
+        <p>chocolate</p>
+        <img src="../../../../assets/images/2.jpg">
+        <p class="price">250</p>
+        <p class="des">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi, sit!</p>
+        <a href="#" title="add to cart" class="btn">Add to cart</a>  
+        </div>
+       </div>
+
+     
+     <div class="items">
+        <div class="center">
+        <p>strawberry</p>
+        <img src="../../../../assets/images/3.jpg">
+        <p class="price">300</p>
+        <p class="des">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi, sit!</p>
+        <a href="#" title="add to cart" class="btn">Add to cart</a>  
+    </div>
+     </div>
+     <div class="items">
+        <div class="center">
+        <p>strawberry</p>
+        <img src="../../../../assets/images/4.jpg">
+        <p class="price">200</p>
+        <p class="des">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi, sit!</p>
+        <a href="#" title="add to cart" class="btn">Add to cart</a>  
+    </div>
+     </div>
+     <div class="items">
+        <div class="center">
+        <p>strawberry</p>
+        <img src="../../../../assets/images/5.jpg">
+        <p class="price"> 250</p>
+        <p class="des">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi, sit!</p>
+        <a href="#" title="add to cart" class="btn">Add to cart</a>  
+    </div>
+     </div>
+     <div class="items">
+        <div class="center">
+        <p>vannila</p>
+        <img src="../../../../assets/images/6.jpg">
+        <p class="price"> 200</p>
+        <p class="des">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi, sit!</p>
+        <a href="#" title="add to cart" class="btn">Add to cart</a>   
+    </div>
+      </div>
+     </div>
+    </div>
+    </div>
+    
+    <div class="cartbox">
+
+        <div class="total"></div>
+            <table class="table">
+                
+            <h1>cart</h1>
+            </table>
+</div>
+     </div>
+    <div class="images">
+        <div class="slide1">
+            <h3>BlackCurrent</h3>
+        <img src="../../../../assets/images/cup 1 (2).png">
+    </div>
+    <div class="slide1">
+    <h3>Strawberry Cheese Cake</h3>
+        <img src="../../../../assets/images/cup 2 (2).png">
+    </div>
+        <div class="slide1">
+            <h3>Chocolate</h3>
+        <img src="../../../../assets/images/cup 3 (2).png">
+    </div>
+
+</div>
+
+
+
+    <br>
+    
+    <div class="footer">
+        <div class="footerchild">
+            <h3>follow us on</h3>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-youtube"></i>
+            <i class="fa-brands fa-facebook"></i>
+        </div>
+        <div class="footerchild" >
+            <h3>Address</h3>
+            1234 Lorem ipsum dolor sit amet.
+            Lorem, ipsum dolor.
+        </div>
+        <div class="footerchild">
+            <h3>Contact</h3>
+            Email: support@mobirise.com
+            Phone: +1 (0) 000 0000 001
+            Fax: +1 (0) 000 0000 002
+        </div>
+        <div class="div">
+        <form id="form"> 
+            <input type="text" id="fname" name="fullname" placeholder="fullname" ><br>
+            <input type="text" id="email" name="emailid" placeholder="email">
+            <br>
+            <input type="tel" id="tel" name="mobileno" placeholder="mobileno"><br>
+            <textarea  id="feedback" placeholder="feedback"></textarea><br>
+            <button type="submit">submit</button>
+          </form>
+        </div>
+</body>
+<script src="./onlinecart.js">
+
+</script>
+</html>

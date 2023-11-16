@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="amount" >
+    <select id="services">
+        <option value="0.25">25%-top notch</option>
+        <option value="0.20">20%-notch</option>
+        <option value="0.15">15%-good</option>
+        <option value="0.10">not bad</option>
+    </select>
+    <input id="person" type="number">
+    <button id="calculate" onclick="click()">calculate</button>
+
+    <p class="tip">tip amount</p>
+    <span id="total">0</span>
+    <span id="each">each</span>
+
+    <script>
+     
+        function click(){
+            let amount=document.querySelector("#amount").value;
+            let persons=document.querySelector("#person").value;
+            let service=document.querySelector("#services").value;
+
+        }
+        if(amount === '' && service === 'select' ){
+            alert("Please enter valid values"); 
+        return; 
+        }
+
+        if(persons === 1 ){
+            document.querySelector("#each").style.display='none'
+        }
+        else{
+            document.querySelector("#each").style.display
+        }
+
+        let total = (amount * service) / persons; 
+    total = total.toFixed(2); 
+  
+    //finally displaying the tip value  
+    document.querySelector('.tip').style.display = 'block'; 
+    document.querySelector('#total').innerHTML = total;
+
+
+
+
+
+
+
+
+    
+            </script>
+</body>
+</html>

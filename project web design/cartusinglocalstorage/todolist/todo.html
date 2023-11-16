@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+    display: grid;
+    grid-template-columns: 50% 25%;
+    min-height: 200vh;
+}
+</style>
+<body>
+    <div class="container">
+    
+
+
+<div id="items">
+<div id="item">
+    <img src="../../../assets/images/1.jpg">
+    <span>1000</span>
+    <button id="add" onclick="addtocart()">addtocart</button>
+</div>
+</div>
+<div id="cart">
+
+</div>
+
+
+
+    </div>
+</body>
+<script>
+let button=document.getElementById("add");
+let get=document.getElementById("cart");
+let item=document.getElementById("item");
+
+let products=[];
+
+
+button.addEventListener('click',()=>{
+    products.push(item.value)
+    localStorage.setItem('products',JSON.stringify(todos))
+    addtocart(item.value)
+    item.value='';
+})
+function addtocart(prod){
+    let div=document.createElement('div')
+    div.innerHTML=prod
+    get.appendChild(div)
+    
+
+}
+
+</script>
+</html>

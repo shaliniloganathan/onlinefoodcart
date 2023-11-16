@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input">
+    <button id="btn" onclick="submit()">submit</button>
+    <p id="rel"></p>
+    <script>
+    //   function printpatter(range){
+    //     for(var i=1;i<=range;i++){
+    //         var str="";
+    //         for(var j=1;j<=i;j++){
+    //             str+=j+" ";
+    //         }
+    //         console.log(str);
+    //     }
+    //   }
+    //   printpatter(10)
+
+
+      let n=10;
+      let stri = "";
+      for(let i=0;i<n;i++){
+        for(let j=0;j<n-i;j++){
+            stri+="*";
+        }
+        stri+='/n';
+        
+      }
+      console.log(stri)
+  
+
+      // function print(n){
+      //   let nu=0;
+      //   while(n>0){
+      //     n = math.floor(n/10);
+      //     nu++;
+      //   } 
+      // }
+      // console.log(print(234))
+
+
+
+      var x=3;
+var y=-7;
+var z=2;
+if (x>0 && y>0 && z>0)
+{
+       alert("The sign is +");
+}
+else (x<0 && y<0 && z<0)
+        {
+          console.log("The sign is -");
+        }
+
+
+
+        var a =20;
+        var b=30;
+        if(a>b){
+          console.log(a);
+        }
+        else{
+console.log(b);
+        }
+
+        // -5, -2, -6, 0, -1
+
+var students =[["lini",30],["raj",40],["mini",50]];
+var average =0;
+for(var i=0;i<students.length;i++){
+
+  average += students[i][1];
+  var avg = ((average)/students.length)
+}
+console.log(avg)
+if(avg>=30){
+  console.log("c")
+}
+else if(avg>=40){
+  console.log("b")
+}
+else if(avg>=50){
+  console.log("c")
+}
+
+
+
+function submit(){
+  var input=document.getElementById("input")
+for(i=1;i<=100;i++){
+  if(i%3==0){
+  var rel=document.getElementById("rel").innerHTML=input;
+  }
+  else if(i%5==0){
+    var rel=document.getElementById("rel").innerHTML=input;
+  }
+  else{
+    var rel=document.getElementById("rel").innerHTML=input;
+  }
+}
+}
+     
+function test50(x, y) 
+{
+  return ((x == 50 || y == 50) || (x + y == 50));
+}
+console.log(test50(50, 50))
+console.log(test50(20, 50))
+console.log(test50(20, 20))
+console.log(test50(20, 30))
+    </script>
+</body>
+</html>

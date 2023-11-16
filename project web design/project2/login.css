@@ -1,0 +1,42 @@
+.container{
+
+    background-color: white ;
+    height: 50vh;
+    margin-top: 100px;
+    width: 50vh;
+}
+    
+body{
+    background-color: rgb(153, 132, 236);
+}
+.form{
+    display: table;
+}
+.formgroup{
+    display:table-row;
+}
+.formgroup label{
+    display: table-cell;
+
+}
+.formgroup input{
+    display: table-cell;
+    margin: 10px;
+}
+.card{
+    text-align: center;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+
+}
+
+.container .card form .formgroup{
+    text-align: center;
+}
+#loginbtn{
+    background-color: rgb(153, 132, 236);
+}
+#resetbtn{
+    background-color: rgb(153, 132, 236);
+}

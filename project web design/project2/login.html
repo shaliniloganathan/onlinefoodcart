@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="./login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Login Page</h2>
+            <form action="#">
+                <div class="formgroup">
+                    <label for="email">Email</label>
+                    <input type="email" class="formcontrol" id="email" placeholder="enteremail">
+                </div>
+                <div class="formgroup">
+                    <label for="password">Password</label>
+                    <input type="password" class="formcontrol" id="password" placeholder="enterpassword">
+                
+                </div>
+                <div class="textcenter">
+                    <button type="button" id="loginbtn" onclick="login()">submit</button>
+                    <button type="reset"  id="resetbtn">reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function login(){
+            let email =document.getElementById("email").value;
+            let password=document.getElementById("password").value;
+            
+            let userrecord=new Array();
+            userrecord=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+            if(userrecord.some((l)=>{
+                return l.email==email && l.password == password
+            })){
+                alert("login successful")
+                let currentuser=userrecord.filter((l)=>{
+                return l.email==email && l.password == password
+            })[0]
+
+            localStorage.setItem("name",currentuser.name);
+            localStorage.setItem("email",currentuser.email);
+            window.location.href="profile.html";
+
+            }else{
+              alert("login fail")
+            }
+        }
+    </script>
+</body>
+</html>

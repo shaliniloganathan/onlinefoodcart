@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Registration</title>
+</head>
+<style>
+    body{
+        background-color: rgb(153, 132, 236);
+    }
+    form{
+        display: grid;
+        justify-content: center;
+        border: 2px solid;
+        background-color: white;
+        width: 300px;
+        margin: 20% 38% 0px;
+        
+    }
+    .formgroup{
+        display: grid;
+        justify-content: center;
+    }
+    h2{
+        display: grid;
+        justify-content: center;
+    }
+    form input{
+        margin: 5px;
+    }
+    .btn{
+        margin: 0px 20px;
+        background-color: rgb(153, 132, 236);
+
+    }
+</style>
+<body>
+  
+    <div class="container">
+        <div class="card">
+            <form action="#">
+                <h2>Registration form</h2>
+
+                <div class="formgroup">
+                    
+                    <input type="text" class="formcontrol" id="name" placeholder="Entername">
+                </div>
+                <div class="formgroup">
+                    <input type="email" class="formcontrol" id="email" placeholder="Enteremail">
+                </div>
+                <div class="formgroup">
+                    <input type="password" class="formcontrol" id="password" placeholder="Enter Password">
+                </div>
+                
+                <div class="textcenter">
+                    <button type="button" class="btn" onclick="savedata()" id="savebtn">submit</button>
+                    <button type="reset"  class="btn">reset</button>
+                </div>
+            </form>
+        </div>
+        <!-- <p id="result"></p> -->
+    </div>
+    <script>
+        function savedata(){
+            let name=document.getElementById("name").value;
+          let  email=document.getElementById("email").value;
+           let  password=document.getElementById("password").value;
+           window.location.href="login.html";
+        //    let  rel=(name+email+password)
+
+        //     let result=document.getElementById("result").innerHTML=rel;
+            // localStorage.setItem("name",name);
+            // localStorage.setItem("email",email);
+            // localStorage.setItem("password",password);
+           let userrecord=new Array();
+           userrecord=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+           if(userrecord.some((v)=>{
+            return v.email ==email
+           })){
+           alert("duplicate");
+        }
+        else{
+            userrecord.push({
+           "name":name,
+           "email":email,
+           "password":password
+            })
+            localStorage.setItem("users",JSON.stringify(userrecord));//stringfy to convert object into string
+        }
+
+
+
+    }
+    </script>
+</body>
+</html>

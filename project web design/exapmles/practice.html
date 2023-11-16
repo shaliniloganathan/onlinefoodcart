@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="select">
+        <option>dropdown</option>
+            </select>
+            <h2 id="gfg"></h2>
+            <h1></h1>
+            
+            <select id="select2">
+                <option>foreach dropdown</option>
+            </select>
+
+            <ol id="list">
+                <li>list</li>
+            </ol>
+           
+
+            <input id="input">
+            <button  id="button">submit</button>
+            <p id="output"></p>
+
+            <!-- <input type="text" id="input"/>
+<button id="button">Palindrome?</button>
+<div id="output"></div> -->
+</body>
+<script>
+    let select=document.getElementById("select");
+
+
+let arr4=['ece','cse','it','eee','mech','civil'];
+
+
+
+    for(let i=0;i<arr4.length;i++){
+    var ar =arr4[i];
+     var el=document.createElement('option');
+     el.textContent=ar;
+     el.value=ar;
+     select.appendChild(el);
+    }
+
+
+    function factorial(n){
+        if(n==1)
+        return 1
+       return n*factorial(n-1)
+      }
+      console.log(factorial(5))
+
+
+let iseven =function(num){
+    return num%2==0;
+
+}
+console.log(iseven(5))
+
+
+let arr=[2,3,4,5,6]
+let findsum=function(arr){
+    sum=0;
+    for(let val of arr){
+        sum=sum+val;
+    }
+    return sum
+}
+console.log(findsum(arr))
+
+
+let arr2=[2,3,4,5,6,7]
+let findsum1=(arr2)=>{
+    sum=0;
+    for(let val of arr2){
+        sum+=val;
+
+    }
+    return sum
+}
+console.log(findsum1(arr2))
+
+
+let volume=function(l,b,h){
+    return l*b*h;
+}
+
+let area=(radius)=>{
+   Math.PI*radius*radius;
+}
+console.log(area(4))
+
+let prod = function(...args){
+    let result=1;
+for(let val of args)
+result *=val
+return result
+}
+console.log(prod(2,3,4,5,6))
+
+
+let prod2=function(){
+    let result =  1
+    for(i=0;i<arguments.length;i++){
+        result*=arguments[i]
+        
+    }
+    return result
+}
+console.log(prod2(2,3,4))
+ 
+//arrow function
+let volume1 =(l,b,h)=>{return l*b*h}
+
+
+//generators =>generates value one by one
+function* indexgenerator(){
+    let index =1;
+    while(true){
+        yield index++
+    }
+}
+const gen =indexgenerator();
+console.log(gen.next().value)
+console.log(gen.next().value)
+console.log(gen.next().value)
+console.log(gen.next().value)
+
+
+
+function lessThanOrEqualToZero(num) {
+	
+    if (num <= 0) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+   console.log( lessThanOrEqualToZero(1))
+
+
+
+   function greetconsole(name){
+    console.log('hello',name)
+   }
+   function  greetheading(name){
+    const heading =document.querySelector('h1').innerHTML='hello'+name
+   }
+   function greet(callback){
+    callback('ram')
+   }
+   greet(greetheading)
+
+   arr=['deepa','suresh','ramya']
+
+
+     arr.forEach(print)
+   function print(val){
+    console.log(val.toUpperCase())
+   }
+
+   // or
+
+   arr.forEach(val=>{
+    console.log(val)
+})
+
+arr.forEach((val,index,arr)=>{
+    arr[index]=val.charAt(0).toUpperCase();
+    
+})
+console.log(arr)
+
+
+let sentence ="i am a good poet"  
+
+    let split =sentence.split(' ')
+   for(var i=0;i<split.length;i++){
+    split[i]=split[i].charAt(0).toUpperCase()+split[i].slice(1);
+   }
+   const sen2 =split.join("");
+   console.log(sen2)
+
+   arr=['ECE','CSE','MEC','EEE']
+   arr.forEach(val=>{
+    let opt =document.createElement("option");
+    opt.textContent=val
+    opt.value=val
+    document.getElementById('select2').appendChild(opt)
+   })
+
+   arr3=['ECE','CSE','IT','EEE','MECH','CIVIL']
+   arr3.forEach(val=>{
+    
+    let list =document.createElement('li')
+    list.textContent=val
+    list.value=val
+   
+    document.getElementById('list').appendChild(list)
+   })
+
+   input=[6,-5,7,-2,4,6,-1]
+  input.forEach(val => {
+    sum =0;
+    for(i=0;i<input.length;i++){
+        if(input[i]>0){
+            sum+=input[i];
+        }
+    }
+   });
+   console.log(sum)
+
+let priceusd=[20,35,13]
+let priceinr=priceusd.map(x=>x*83)
+console.log(priceinr)
+//or
+piceinr=priceusd.map(convert)
+function convert(val){
+    return val*83
+}
+console.log(priceinr)
+
+
+
+priceusd.forEach( (val,index) =>{
+    priceusd[index] =val*83
+   
+})
+console.log(priceinr)
+
+
+const input2=[{name:'lini',age:20},
+              {name:'pavi',age:20},
+              {name:'varsha',age:21}
+]
+
+const ages =input2.map(x =>x.age)
+console.log(ages)
+
+
+
+//filter 
+//================
+let cost =[35,234,34,32,56,12,21,101]
+let lessthan100=cost.filter(x => x<100)
+console.log(lessthan100)
+
+
+//reduce 
+cost =[35,234,12,34,54,123]
+let cartotal =cost.reduce((total,el)=>total+el)
+console.log(cartotal)
+
+arr2d = [
+    ["a","b","c"],
+    ["c","d","f"],
+    ["d","f","g"]
+
+];
+
+console.log(arr2d.flat())
+let count = arr2d.flat().reduce(
+(accumulator,currval)=>{
+if(accumulator[currval])
+    accumulator[currval]++
+else
+    accumulator[currval] =1
+    return accumulator
+
+}
+    
+    
+    ,{})
+    console.log(count)
+
+    arr=[4,6,2,3,1,2,1,5,7,8,4,3]
+
+    let arrdup=arr.reduce(
+        (acc,curr)=>{
+        if(acc[curr]++)
+            acc[curr]--
+        else
+            acc[curr]=1
+            return acc
+        
+    },{})
+    console.log(arrdup)
+ 
+
+
+name=
+
+// function getfirstletter(str){
+//     const first=str
+//     .split(' ')
+//     .map(word=>word.charAt(0))
+//     .join('');
+//     return first;
+// }
+// console.log(getfirstletter("robert andrew george"))
+
+// let s = "Java Script Object Notation";
+// let acronym = str.split(/\s/).reduce((response,word)=> response+=word.slice(0,1),'')
+
+// console.log(acronym);
+
+
+
+input4=[6,-5,7,-2,4,6,-1]
+
+input4.forEach(val=>{
+    sum=0;
+    for(i=0;i<input4.length;i++){
+    if(input4[i]>0){
+        sum=sum+input4[i]
+    }
+}
+})
+console.log(sum)
+ 
+
+
+var twosums=function(nums,target){
+    for(let i=0;i<nums.length;i++){
+        for(let j=i+1;j<nums.length;j++){
+        if   ( nums[i]+nums[j] == target){
+            return[i,j]
+
+        }
+
+        }
+    }
+
+}
+console.log(twosums([2,7,11,15],9))
+
+
+vartwo=function(nums,target){
+    let map =new map()
+    for(let i=0;i<nums.length;i++){
+        let complement = target - nums[i];
+        if(map.has(complement)){
+            return[map.get(complement),i]
+     map.set(nums[i],i)
+        }
+    }
+
+}
+
+// let n = 0o00010101;
+// function(){
+// for(let i=0;i<n.length;i++){
+//     if(n[i]=1){
+//         return n=n+1
+//     }
+// }
+
+// }
+
+var har=function(n){
+    for(let i=0;i<n.length;i++){
+     if(n[i]=1){
+       return n=n+1
+    }
+}
+}
+console.log(har(0o011101))
+
+let a=[1,2,3,4,5,6,7,8]
+
+// for(let i=0;i<a.length;i++){
+//     mac =Math.max(a[i]);
+//     document.getElementById("get").innerHTML=mac;
+// }
+// console.log(mac)
+
+// function arrmax(arr){
+//     return Math.max(...arr)
+// }
+// console.log(arrmax([1,2,3,4,5,6]))
+
+
+
+let input =document.getElementById("input")
+let output =document.getElementById("output")
+
+document.getElementById("button").addEventListener('click',function(){
+    let s = input.value;
+    output.innerHTML =s+"is"+(ispalindrome(s)?"":"not")+"a palindrome";
+})
+
+function ispalindrome(s){
+    s=s.toLowerCase();
+    return s.split("").reverse().join("") === s;
+}
+
+// var input = document.getElementById("input");
+// var output = document.getElementById("output");
+
+// document.getElementById("button").addEventListener("click", function () {
+//     var s = input.value;
+//     output.innerHTML = s + " is" + (isPalindrome(s) ? "" : " not")
+//                      + " a palindrome ";
+// });
+// console.log(s)
+// function isPalindrome(s) {
+//     s = s.toLowerCase();
+//     return s.split("").reverse().join("") === s;
+// }
+
+const num=parseInt(prompt("enter a number"));
+let isprime=true;
+
+if(num===1){
+    alert("not a prime no or composite no")
+}
+else if(num>1){
+    for(let i=2;i<num;i++){
+        if(num % i== 0){
+            isprime=false;
+        break;        }
+    }
+}
+if (isPrime) {
+        alert(`${number} is a prime number`);
+    } else {
+        alert(`${number} is a not prime number`);
+    }
+
+    function find(){
+      let  arr=[1,2,3];
+      return arr.reduce((sum,num)=>sum+num,0);
+
+    }
+   document.write( find())
+   
+
+</script>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+</head>
+
+<style>
+     .cartbox{
+        transition: 0.3s linear;
+        transform: scale(0);
+        width: 50%;
+        height: 100vh;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        z-index: 9;
+    }
+    .cartbox.active{
+        transform: scale(1);
+    }
+    .cartbox .c{
+        position: relative;
+        height: 70%;
+        width: 80%;
+        background:#fff;
+        display:flex;
+        flex-direction: column;
+    }
+</style>
+<body>
+    <div class="iconshopping">
+        <p>0</p>
+        <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+    <div class="cartbox">
+        <div class="c">
+            <i class="fa-solid fa-xmark"></i>
+            <h1>cart</h1>
+</div>
+    <h1>The Document Object</h1>
+<h2>The createElement() Method</h2>
+
+<p>Create a p element and append it to "myDiv":</p>
+
+<div id="myDIV" style="padding:16px;background-color:lightgray">
+<h3>A DIV element</h3>
+<ul id="list">
+
+</ul>
+</div>
+<script>
+const para = document.createElement("p");
+para.innerHTML = "This is a paragraph.";
+
+// Append to another element:
+document.getElementById("myDIV").appendChild(para);
+
+let a=document.createElement("li");
+a.innerHTML="list","list2";
+
+document.getElementById("list").appendChild(a)
+
+
+let langs=["html","css","js"]
+
+let b= langs.map(lang=>{
+    let li=document.createElement('li');
+    li.textContent=lang;
+    return li
+})
+a.append(...b)
+
+
+window.onload=function(){
+    const iconshopping = document.querySelector('.iconshopping');
+	const cartbox = document.querySelector('.cartbox');
+	iconshopping.addEventListener("click",function(){
+		cartbox.classList.toggle('active');
+	});
+}
+
+</script>
+
+    
+</body>
+</html>

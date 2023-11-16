@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper">
+        <h1> fd rate calculator</h1>
+        <div class="inputdiv">
+            <input type="text" id="input" >
+        </div>
+        <div>
+            <button type="submit" onclick="fdrate()">calculate</button>
+        </div>
+        <div id="result">
+
+        </div>
+    </div>
+    <div id="box2">
+        <h1>city stats</h1>
+        <select id="inputt">
+            <option value="bangalore">bangalore</option>
+            <option value="chennai">chennai</option>
+            <option value="hyderabad">hyderabad</option>
+            <option value="cochi">cochi</option>
+
+
+        </select>
+        <div >
+            <button id="btn3" type="submit">city stats</button>
+        </div>
+    
+    </div>
+    <div id="box">
+        <div>
+
+        <h1>palindrome</h1>
+        <input type="text" id="input1">
+</div>
+<div>
+    <button type="submit" id="btn" onclick="palin">palindrome</button>
+</div>
+<div id="result1">
+
+</div>
+    </div>
+    <h1>eb bill converter</h1>
+    <div id="eb">
+        <input id="input2" type="text">
+        <div>
+        <button id="btn2" type="submit" onclick="ebbill()">eb bill converter</button>
+    </div>
+        <p id="result2"></p>
+    </div>
+
+    <div>
+        <input id="input4" type="text">
+        <button id="btn4" type="submit">submit</button>
+    </div>
+    <div id="rel1"></div>
+
+
+    <div >
+        <h1>job eligibility</h1>
+        <div  id="main">
+            <input type="radio" id="hightschool" value="highschool">
+            <input type="radio" id="ug" value="ug">
+            <input type="radio" id="pg" value="pg">
+            <input type="radio" id="doctorate" value="doctorate">
+        </div>
+        <div >
+            <button id="btn4" type="submit">submit</button>
+        </div>
+        <div id="rel2"></div>
+    </div>
+
+   
+</body>
+<script>
+    function fdrate(){
+        const months=Number(document.getElementById("input").value)
+        let rate=0;
+        if(months<3){
+            rate=5.8;
+        }else if(months>= 3 && months<=6){
+            rate =6.5;
+        }else if(months>=7 && months<=9){
+            rate=6.8;
+        }
+         else{
+            rate=7
+         }
+ let result =document.getElementById("result").innerHTML="your interest rate is "+ rate+"%";
+    }
+
+    
+    document.getElementById("btn").addEventListener("click",function(){
+  let txt = document.getElementById("input1").value;
+  checkPalindrome(txt);
+});
+
+
+
+function checkPalindrome(txt){
+  let txt_new = txt.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+  let len = txt_new.length;
+  let halfLen = Math.floor( len/2 );
+  let result =document.getElementById("result1");
+  let i;
+
+  for( i = 0; i < halfLen; i++){
+      if( txt_new[i] !== txt_new[len-1-i]){
+          result.textContent = "Sorry! Not a palindrome 😔";
+          return;
+      }
+      result.textContent = "Yes! It's a palindrome 😍"
+  }
+}
+
+function  ebbill(){
+    const input = Number(document.getElementById("input2").value)
+    let amount = 0;
+    
+    if(input <=50 ){
+        amount=0.75*input ;
+    }
+
+    else if(input >=50 && input<=100){
+        amount= (50*0.75)+(input -50)*1;
+     
+
+    }else if(input>=100 && input<=200){
+        amount=(100*1)+(input -100)+1.30;
+    }else{
+        amount=(200*1.30)+(input-200)+1.50;
+    }
+    let result2 =document.getElementById("result2").innerHTML="unit price is" + amount;
+
+
+
+}
+
+const button =document.getElementById("btn3")   
+let result3 = document.createElement('div')
+result3.id='result3'
+document.getElementById('box2').appendChild(result3);
+button.addEventListener("click",displaystats)
+function displaystats(){
+    const input =document.getElementById("inputt")
+   const city= inputt.options[inputt.selectedIndex].value
+     
+   let population = 0; literacyrate=0;language="";
+
+  switch(city){
+    case 'bangalore':
+        population = 394849
+        literacyrate = 33.33
+        language='kannada'
+        break
+
+    case 'chennai':
+         population =83387
+         literacyrate =39
+         language = 'tamil'
+         break
+    case 'hyderabad': 
+        population =38383
+        literacyrate=32
+        language ='telugu'
+        break
+
+    case 'cochi': 
+        population =33433
+        literacyrate =23
+        language ='malayalam'
+        break
+  }
+let text =` the indian city of ${city} has a population of ${population}. language spoken${language} and literacy rate is ${literacyrate}`;
+
+document.getElementById('result3').innerHTML=text;
+}
+
+// button1=document.getElementById('btn4');
+// button1.addEventListener('click',eligiblity)
+//     const get =document.getElementById('main');
+
+
+// function eligibility(qualification){
+//     switch(qualification){
+//         case 'ug':
+//             qualification="not eligible"
+//             ans=document.getElementById("rel2").innerHTML=qualification;
+//             break
+//     }
+// }
+
+
+let rel;
+const operator = prompt('enter(either +,-,* or /):')
+
+const first = parseFloat(prompt('enter first number'));
+const second=parseFloat(prompt('enter second number'));
+
+switch (operator){
+    case '+':
+    rel  =first+second;
+     ans =`${rel}`;
+
+    document.getElementById("rel1").innerHTML=ans;
+    break
+  
+
+    case '-':
+    rel=first-second
+     ans=`${rel}`
+    document.getElementById("rel1").innerHTML=ans;
+    break
+
+    case '*':
+    rel=first*second
+    ans=`${rel}`
+    document.getElementById("rel1").innerHTML=ans;
+    break
+
+    case '/':
+    rel=first/second
+     ans=`${rel}`
+    document.getElementById("rel1").innerHTML=ans;
+    break
+}
+
+
+let user ={
+
+
+person1:{
+    name:'lini',
+    id:1,
+    password:1234
+},
+person2:{
+    name:'lara',
+    id:2,
+    password:1235
+},
+person3:{
+    name:'luoie',
+    id:3,
+    password:1236
+}
+}
+console.log(user.person1.name)
+user.person3.id=4;
+console.log(user)
+
+for(let i=1; i<=5;i++){
+    console.log(i)
+}
+
+while(true){
+    let num =Number(prompt("enter a number"));
+    if(!isNaN(num))
+    break;
+}
+
+const str =" i am a good magician";
+const arr=str.split(" ");
+for(var i=0;i<arr.length;i++){
+    arr[i]=arr[i].charAt(0).toUpperCase(0)+arr[i].slice(1);
+
+}
+const str2=arr.join(" ");
+console.log(str2);
+
+
+const fruits =['apple','orange','grapes','mango'];
+for(i=0;i<fruits.length;i++){
+    console.log(fruits[i].toUpperCase())
+}
+
+//for...of =>for array
+for(let arr of fruits){
+    console.log(arr)
+}
+
+item ={
+    name:'phone',
+    quantity:1,
+    price:23433
+}
+
+for(let key in item){
+    console.log(item[key])
+}
+
+
+
+
+let user1={
+    name:'ramya',
+    age:22,
+    login(){
+        console.log('you are logged in')
+    },
+    logout(){
+        console.log('you are logged out')
+    }
+   }
+   let user2={
+    name:'varsha',
+    age:22,
+    login(){
+        console.log('you are logged in')
+    },
+    logout(){
+        console.log('you are logged out')
+    }
+   }
+   let user3={
+    name:'pavi',
+    age:22,
+    login(){
+        console.log('hi',this.name)
+        console.log('you are logged in')
+    },
+    logout(){
+        console.log('you are logged out')
+    }
+   }
+   user3.login()
+
+class User{
+    static numberofUsers = 0;
+    constructor(name,age){
+this.name=name;
+this.age=age
+User.numberofUsers++
+}
+    login(){
+        
+        console.log('hi',this.name)
+        console.log('you are logged in')
+    }
+    logout(){
+        console.log('you are logged out')
+    }
+    static displaytotal(){
+        console.log('totalusers',User.numberofUsers)
+    }
+   
+}
+let userone=new User('vidya',21)
+let usertwo=new User('ramesh',33)
+console.log('numberofusers',User.numberofUsers)
+User.displaytotal()
+let music =new String('arr');
+console.log(music) 
+
+
+//inheritance we can access the already declared class variables methods is known as inheritance 
+
+class paiduser extends User{
+    constructor(name,age){
+      super(name,age)
+        this.storage=100;
+    }
+message(){
+    console.log('you have 100gb free')
+}
+login(){
+    console.log('thank you for your support')
+    return this
+}
+}
+ 
+ let paiduser1=new paiduser('dhana',22)
+ 
+ paiduser1.login().message()
+</script>
+</html>

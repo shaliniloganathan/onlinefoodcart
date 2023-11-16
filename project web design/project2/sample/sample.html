@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+  <ul id="firstlist">
+    <li>c</li>
+    <li>python</li>
+  </ul>
+  <ul id="secondlist">
+    <li>java</li>
+    <li>c++</li>
+  </ul>
+
+   <div id="languages"></div>
+   <button onclick="append()">append</button>
+   <script>
+//     function append(){
+//     var lang =["c","java","python"];
+//     var ul =document.createElement("ul");
+//     for(i=0;i<lang.length;i++){
+//         var li=document.createElement("li");
+//         li.liinnerHTML=lang[i];
+//         ul.appendChild(li);
+//     }
+//     document.getElementById("languages").appendChild(ul);
+// }
+
+function createmenu(lang){
+    let li=document.createElement("li");
+    li.textContent=lang;
+    return li
+}
+const firstlist=document.querySelector("#firstlist");
+const firstsec=firstlist.firstElementChild;
+const secondlist=document.querySelector("#secondlist");
+secondlist.appendChild(firstsec)
+
+
+
+localStorage.setItem("theme","dark")
+localStorage.setItem('backgroundColor','white');
+localStorage.setItem('color','#111');
+
+let keys =Object.keys(localStorage);
+for(let key of keys){
+  console.log(`${key}:${localStorage.getItem(key)}`)
+}
+
+
+let shanvi = {
+    age:2,
+    school:"cv",
+    nationality:"indian"
+}
+
+// localStorage.setItem("shanvi",JSON.stringify(shanvi));
+
+// console.log(localStorage.getItem('shanvi'))
+
+// addEventListener('shanvi',function(e){
+//   console.log(`the value is ${e.key} and domain is ${e.domain}`)
+// })
+
+let getobjasmethod=obj=>{
+  let newobj={}
+  Object.keys(obj)
+  .forEach(key=>{
+    newobj[key]=function(){}
+  })
+  return newobj;
+}
+let result = getobjasmethod(shanvi)
+console.log(shanvi)
+// let person = {
+//     name : "Raktim Banerjee",
+//       email: "example@gmail.com"
+// }
+  
+// const getObjectKeyAsMethod = obj =>{
+//  let newObject = {};
+   
+//  //returned object keys in an array
+//  Object.keys(obj)
+//      //iterate the array
+//     .forEach(key => {
+//       //assign function to key
+//       newObject[key] = function(){}
+//   })
+//  return newObject;
+// }
+  
+// let result = getObjectKeyAsMethod(person);
+  
+// console.log(result);
+   </script>
+
+
+</body>
+</html>

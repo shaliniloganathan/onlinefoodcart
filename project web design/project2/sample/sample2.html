@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <div class="toolbar">
+            <h1 class="brand">Shop</h1>
+            <p>
+                <a href="cart.html">
+                    Cart items:
+                    <span id="count">0</span>, Price:
+                    <span id="sum">0</span>
+              
+                </a>
+                <button id="clear" class="clear" onclick="clearcart()">clearcart</button>
+                <button id="remove" class="remove" onclick="remove()">remove</button>
+            </p>
+        </div>
+
+        <div class="products">
+            <div class="product">
+                <h3>Procut one</h3>
+                <p>Price: 2000</p>
+                <div>
+                <button data-id="1" data-price="2000" data-title="Product one">Add to cart</button>
+           </div>
+            </div>
+
+
+            <div class="product">
+                <h3>Procut two</h3>
+                <p>Price: 3000</p>
+                <button data-id="2" data-price="3000" data-title="Product two">Add to cart</button>
+                
+            </div>
+
+            <div class="product">
+                <h3>Procut three</h3>
+                <p>Price: 6000</p>
+                <button data-id="3" data-price="6000" data-title="Product three">Add to cart</button>
+            </div>
+
+            <div class="product">
+                <h3>Procut four</h3>
+                <p>Price: 1000</p>
+                <button data-id="4" data-price="1000" data-title="Product four">Add to cart</button>
+                
+            </div>
+        </div>
+    <script>
+        let count = 0;
+let sum = 0;
+let cart = {};
+
+if (localStorage.getItem("count")) {
+    count = parseInt(localStorage.getItem("count"));
+}
+
+if (localStorage.getItem("sum")) {
+    sum = parseInt(localStorage.getItem("sum"));
+}
+
+if (localStorage.getItem("cart")) {
+    cart = JSON.parse(localStorage.getItem("cart"));
+}
+
+updateCart();
+
+let btns = document.querySelectorAll(".products button");
+
+for (let i = 0; i < btns.length; i++) {
+    let btn = btns[i];
+    btn.addEventListener("click", add);
+
+    // id = btn.dataset.id;
+    // if (cart.indexOf(id) >= 0) {
+    //     btn.className = "added";
+    //     btn.textContent = "Remove";
+    // }
+}
+
+function add(event) {
+    let price = Number(event.target.dataset.price);
+    let title = event.target.dataset.title;
+    let id = event.target.dataset.id;
+
+if (id in cart) {
+    cart[id].qty++;
+} else {
+    let cartItem = {
+        title: title,
+        price: price,
+        qty: 1
+    };
+    cart[id] = cartItem
+}
+
+    count++;
+    sum += price;
+
+    console.log(cart);
+
+    // let index = cart.indexOf(event.target.dataset.id);
+    // if (index >= 0) {
+    //     cart.splice(index, 1);
+    //     count--;
+    //     sum -= price;
+    //     event.target.className = "";
+    //     event.target.textContent = "Add to cart";
+    // } else {
+    //     cart.push(event.target.dataset.id);
+    //     count++;
+    //     sum += price;
+    //     event.target.className = "added";
+    //     event.target.textContent = "Remove";
+    // }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCart();
+}
+
+function updateCart() {
+    document.getElementById("sum").textContent = sum;
+    document.getElementById("count").textContent = count;
+    localStorage.setItem("sum", sum);
+    localStorage.setItem("count", count);
+    localStorage.removeItem("count")
+    
+}
+
+function clearcart() {
+    document.getElementById("sum").textContent = localStorage.clear();
+    document.getElementById("count").textContent =localStorage.clear();
+    localStorage.setItem("sum", sum);
+    localStorage.setItem("count", count);
+    localStorage.removeItem("count")
+    localStorage.removeItem("sum")
+    
+}
+// function clearcart(){
+//     document.getElementById("sum").textContent="";
+//     document.getElementById("count").textContent="";
+//      localStorage.setItem("");
+//      localStorage.setItem("");
+
+// }
+// function remove(){
+//     localStorage.removeItem("count");
+//     localStorage.removeItem("sum");
+//     alert("item has been removed")
+// }
+// Clear cart
+obj.clear = function clearcart() {
+    cart = {};
+    
+  }
+    </script>
+    <script src="./app.js"></script>
+</body>
+</html>

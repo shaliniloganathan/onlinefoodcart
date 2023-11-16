@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    
+var arraylist=[1,2,3,4,5,6]
+var anotherarraylist=arraylist;
+arraylist.length=0;
+console.log(anotherarraylist)
+
+function isint(num){
+    return num%1===0;
+}
+console.log(isint(2))
+
+
+function fizzbuzz(num) {
+    if(num%3==0){
+        console.log("fizz")
+    }else if(num%5==0){
+        console.log("buzz")
+    }else{
+        console.log("fizz buzz")
+    }
+}
+fizzbuzz(5)
+
+function anagram(sentence1,sentence2){
+     
+      let a=sentence1.length;
+      let b=sentence1.length;
+      if(a != b){
+        return false
+      }
+      let str1=sentence1.split('').sort().join('');
+      let str2=sentence2.split('').sort().join('');
+      if(str2 !== str2){
+        console.log("not a anagram")
+      }else{
+        console.log("anagram")
+      }
+
+}
+anagram("mary","army")
+
+function sumoftwonum(a,b){
+  console.log(a+b);
+}
+sumoftwonum(10,5)
+
+
+
+function findmax(arr){
+ console.log(Math.max(...arr))
+}
+findmax([1,2,3,4,5])
+
+
+
+ 
+let arr=[1,2,3,4,5]
+function findmax(arr){
+ rel= (Math.max(...arr))
+}
+
+console.log(rel)
+
+function palindrome(str1){
+
+    let a=str1.split('');
+   let b =a .reverse();
+   let c=b.join('');
+    if(str1==c){
+        console.log(" palindrome")
+    }else{
+        console.log(" not a palindrome")
+    }
+}
+palindrome("lini")
+
+
+let num=[1,2,3,4,5,6];
+let even=[]
+num.forEach(i=>{
+    if(i%2===0){
+        even.push(i)
+    }
+});
+console.log(`${even}`)
+
+
+function factorial(num){
+    if(num===0||num===1){
+        return 1
+    }else{
+        return num*factorial(num-1)
+    }
+}
+console.log (factorial(5))
+
+
+function capitalize(a){
+    
+    const words=a.split(" ");
+    for(let i=0;i<words.length;i++){
+        words[i]=words[i][0].toUpperCase()+words[i].substr(1)  
+      }
+return words.join(' ');
+
+}
+
+console.log(capitalize("this is javascript"))
+</script>
+</html>

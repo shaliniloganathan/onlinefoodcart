@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input1">
+    <button onclick="click1()" id="btn1">checkint</button>
+    <p id="get1"></p>
+
+
+    <!-- <input id="input"> -->
+    <input id="input2">
+    <button onclick="click2()" id="btn2">anagram</button>
+    <p id="get2"></p>
+</body>
+<script>
+var string="welcome to javascript"
+var split=string.split(" ")
+var reverse=split.reverse("");
+var join=reverse.join("")
+console.log(join)
+
+
+// var reverseentire=reverseBySeparator(string,"");
+// var reverseeach=reverseBySeparator(reverseentire,"");
+// function reverseBySeparator(string,separator){
+//     return string.split(separator).reverse().join(separator)
+// }
+ 
+//  console.log(reverseBySeparator())
+function isint(num){
+    return num % 1 === 0 ;
+
+}
+console.log(isint(4));
+console.log(isint(0.5))
+
+function fits(x, y) {
+  if (Number.isInteger(y / x)) {
+    return 'Fits!';
+  }
+  return 'Does NOT fit!';
+}
+
+console.log(fits(5, 10));
+// Expected output: "Fits!"
+
+console.log(fits(5, 11));
+
+
+function click1(){
+  let input =  document.getElementById("input1").value;
+    if(input % 1 === 0){
+
+        document.getElementById("get1").innerHTML= input +" is int"; 
+    }else{
+        document.getElementById("get1").innerHTML=input+" not int";
+    }
+}
+
+function duplicate(arr){
+    return arr.concat(arr);
+
+}
+console.log( duplicate([1,2,3,4,5]))
+
+
+const arr=[1,2,3,3,4,2,2,1,4,5,6]
+const unique=new Set(arr)
+console.log(unique)
+
+//TO GO BACK TO ARRAY FORMAT USE [...NAME OF THE BEFORE SET]
+const goback=[...unique];
+console.log(goback)
+
+
+//MUL FUNCTION
+function mul(x){
+    return function (y){
+        return function (z){
+            return x*y*z;
+        }
+    }
+}
+console.log(mul(2)(3)(4))
+
+
+// function isanagram(str1,str2){
+// let n1=str1.length
+// let n2=str2.length
+// if(n1 != n2){
+//     return false;
+
+// }
+// str1.sort();
+// str2.sort();
+
+// for(let i=0;i<n1;i++){
+//     if(str1[i] != str2[i]){
+//     return false;
+//     }
+//     else{
+//         return true
+//     }
+// }
+// let str1=['t', 'e', 's', 't'];
+// let str2=['t', 't', 'e', 'w'];
+
+// if (areAnagram(str1, str2))
+//     document.write(
+//     "The two strings are" + 
+//     " anagram of each other<br>");
+// else
+//     document.write(
+//     "The two strings are not" + 
+//     " anagram of each other<br>");
+// }
+
+// function click2(){
+//     let input=document.getElementById("input").value;
+//     let input2=document.getElementById("input2").value;
+
+//     let len1=input.length;
+//     let len2=input2.length;
+
+//     if(len1 != len2){
+//         document.getElementById("get2").innerHTML=input+input2+"invalid input";
+//         return
+//     }
+
+//     let sort1 = input.split('').sort().join('');
+//     let sort2=input2.split('').sort().join('');
+//     if(input === input2){
+//     let a=    document.getElementById("input").value
+//     let b=    document.getElementById("input2").value
+    
+//    let c= document.getElementById("get2").innerHTML=a+" "+b+"is a anagram";
+
+
+        
+//     }else{
+//       let a=  document.getElementById("input").value
+//       let b=  document.getElementById("input2").value
+//       let c= document.getElementById("get2").innerHTML=a+" "+b+"is not a anagram";
+
+//     }
+// }
+function click2(){
+    let a=document.getElementById("input2").value;
+    let str=a.split('');
+    let reverse=str.reverse();
+    let join=reverse.join("");
+
+
+    if(a === join){
+        document.getElementById("get2").innerHTML=a+"is a palindrome";
+    }else{
+
+        document.getElementById("get2").innerHTML=a+"is a not palindrome";
+
+    }
+}
+
+const mySentence = "freeCodeCamp is an awesome resource";
+const words=mySentence.split(" ");
+for(let i=0;i<words.length;i++){
+    words[i]=words[i][0].toLocaleUpperCase()+words[i].substr(1);
+}
+words.join(" ");
+console.log(words)
+
+
+const sentence = "lini";
+const word=sentence.charAt(0).toLocaleUpperCase()+sentence.slice(1);
+console.log(word);
+
+let tatkalbook=   new Promise((resolve,reject)=>{
+    let bookingsuccess=true;
+    if (bookingsuccess){
+        resolve()
+    }else{
+        reject()
+    }
+   })
+   tatkalbook.then(success)
+   .catch(failure)
+
+   function success(){
+    console.log("thanks i will transfer the amount")
+   }
+   function failure(){
+    console.log("thanks i will book a bus")
+   }
+
+   function tosscoin(){
+    return new Promise ((resolve,reject)=>{
+        //0 head (success) 1 tail(failure)
+         const rand =Math.floor.random()*2
+         if(rand==0){
+            resolve()
+         }else{
+            reject()
+         }
+    })
+   }
+   tosscoin().then(()=>console.log("congrats its head you won"))
+   .catch(()=>console.log("sorry you lost its tail"))
+
+
+   let reacha =new Promise((resolve,reject)=>{
+    const reached = true
+    if(reached){
+        setTimeout(resolve,3000,"vidya reached")
+    }else{
+        reject("vidhya not reached")
+    }
+    
+   })
+   let reachb =new Promise((resolve,reject)=>{
+    const reached = true
+    if(reached){
+        setTimeout(resolve,1000,"lavanya reached")
+    }else{
+        reject("lavanya not reached")
+    }
+    
+   })
+   let reachc =new Promise((resolve,reject)=>{
+    const reached = true
+    if(reached){
+        setTimeout(resolve,2000,"priya reached")
+    }else{
+        reject("priya not reached")
+    }
+    
+   })
+   Promise.all([reacha,reachb,reachc])
+   .then((message)=>console.log(message))
+   .catch((message)=>console.log(message))
+
+
+   Promise.allSettled([reacha,reachb,reachc])
+   .then((message)=>console.log(message))
+   .catch((message)=>console.log(message))
+
+   Promise.any([reacha,reachb,reachc])
+   .then((message)=>console.log(message))
+   .catch((message)=>console.log(message))
+
+   Promise.race([reacha,reachb,reachc])
+   .then((message)=>console.log(message))
+   .catch((message)=>console.log(message))
+
+
+   //error handling 
+try{
+    num =prompt("enter a number")
+    if(num===""){
+        throw "cannot be empty"
+    }
+    
+    if(isNaN(num))
+        throw"enter a valid number"
+    
+   console.log(num**2)
+}
+
+catch(error){
+    console.log(error)
+}
+finally{
+    console.log('bye') // even if error is there or not that code should run in that situation use finnaly
+}
+//async await
+
+//async always returns a promise
+
+async function fn(){
+    return "hello";
+}
+console.log(fn())
+fn().then((msg)=>console.log(msg))
+
+
+
+
+let reachd=new Promise((resolve,reject)=>{
+    const reached=true
+    if(reached){
+      setTimeout ( resolve,3000,"latha reached")
+    }else{
+        reject("latha not reached")
+    }
+})
+reachd.then((msg)=>console.log(msg))
+.catch((msg)=>console.log(msg))
+async function status(){
+    console.log("hi..")
+   res = await reachd
+   console.log(res)
+   console.log(bye)
+}
+status()
+
+let json =`[
+    {
+        "stock":"tcs",
+        "price":3500
+    },
+    {
+        "stock":"hcl",
+        "price":2500
+    },
+    {
+        "stock":"sbi",
+        "price":550
+    }
+]`
+let parsed =JSON.parse(json);
+console.log(parsed[1].price);
+console.log(JSON.stringify(parsed));
+
+
+</script>
+</html>

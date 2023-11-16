@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Please click on the below iteam to add the cart </h2>
+    <ul class="list" style="list-style: none;" >
+        <li>Macbook pro<img src="../../assets/images/img6.jpeg" style="width: 100px; height:100px">
+       
+        </li><br>
+        <li>Dell</li><br>
+        <li>Lenovo</li>
+    </ul>
+    <input id="field">
+    
+    <div class="content" style="width:250px; height: 150px; background-color: burlywood; padding: 50px;"></div>
+    <button class="Clear" style="width: 100px; height: 50px;">Clear</button>
+    
+
+    <script>
+    var Allitem = document.querySelectorAll(".list li");
+var content = document.querySelector(".content");
+var btn = document.querySelector(".Clear");
+
+
+
+Allitem.forEach(function(item) {
+   
+item.onclick=function () {
+    
+    content.innerHTML+=item.innerHTML + content++;" <br> ";
+    
+    if (content.innerHTML != "") {
+        btn.style.display="block";
+    }
+}
+});
+
+btn.onclick=function () {
+    content.innerHTML="";
+  
+}
+
+function jsIncreaseValue(field) {
+ nr = parseInt(document.getElementById(field).value);
+ document.getElementById(field).value = nr + 1;
+}
+
+        
+    </script>
+</body>
+</html>
+https://codepen.io/MeProDev/pen/NWdEgBa

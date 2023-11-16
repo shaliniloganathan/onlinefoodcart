@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./cart.css">
+    <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  
+    <div class="container"> 
+    
+        <div id="alerts"></div>
+     <div class="productcont">
+             <div class="product">
+                 <h3 class="productname">Product 1<img src="../../assets/images/img6.jpeg"></h3>
+                 <p>Product description excerpt...</p>
+                 <p class="price">$5.05</p>
+                 <button class="addtocart">Add To Cart</button>
+             </div>
+             <div class="product">
+                 <h3 class="productname">Product 2<img src="../../assets/images/img7.jpeg"></h3>
+                 <p>Product description excerpt...</p>
+                 <p class="price">$8.50</p>
+                 <button class="addtocart">Add To Cart</button>
+             </div>
+             <div class="product">
+                 <h3 class="productname">Product 3<img src="../../assets/images/img8.jpeg"></h3>
+                 <p>Product description excerpt...</p>
+                 <p class="price">$10.50</p>
+                 <button class="addtocart">Add To Cart</button>
+             </div>
+             </div>
+             <div class="cart-container">
+               <h2>Cart</h2>
+               <table>
+                 <thead>
+                   <tr>
+                   <th><strong>Product</strong></th>
+                   <th><strong>Price</strong></th>
+                 </tr>
+                 </thead>
+                 <tbody id="carttable">
+                 </tbody>
+               </table>
+               <hr>
+               <table id="carttotals">
+                 <tr>
+                   <td><strong>Items</strong></td>
+                   <td><strong>Total</strong></td>
+                 </tr>
+                 <tr>
+                   <td>x <span id="itemsquantity">0</span></td>
+                  
+                   <td>$<span id="total">0</span></td>
+                 </tr></table>
+     
+                 
+               <div class="cart-buttons">  
+                 <button id="emptycart">Empty Cart</button>
+                 <button id="checkout">Checkout</button>
+               </div>
+             </div>
+     </div>
+<script src="./scriptcart.js"></script>
+</body>
+</html>
+
+https://codepen.io/PurpleTigress/pen/eXPxxq
+https://codepen.io/divekdas/pen/yLOZPjW 

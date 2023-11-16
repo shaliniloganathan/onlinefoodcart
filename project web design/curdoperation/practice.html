@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="employee-form">
+        <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+        <div >
+            <label for="name" >name</label>
+            <input id="name" class="name" type="text">
+        </div>
+        <div >
+            <label for="age">age</label>
+            <input id="age" class="age" type="number">
+        </div>
+        <div>
+            <label for="city">city</label>
+            <input id="city" class="city" type="text">
+
+        </div>
+          <div >
+            <label for="emailid">emailid</label>
+            <input id="emailid" class="emailid" type="email">
+          </div>
+
+        <div class="formactionbutton"> 
+            <input type="submit" value="submit">
+            <input type="reset" value="reset">
+        </div>
+        </form>
+    </div>
+
+    <div class="employeetable">
+        <table class="list" id="employeelist">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>age</th>
+                    <th>city</th>
+                    <th>email</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+    var selectedrow=null;
+
+    function onFormSubmit(){
+        if (validate()) {
+        var formdata = readformdata();
+        if (selectedrow == null)
+            insertnewrecord(formdata);
+        else
+            updateRecord(formdata);
+        resetForm();
+    }
+    }
+
+    function readformdata(){
+        formdata={}
+        formdata=document.getElementById("name").value;
+        formdata=document.getElementById("age").value;
+        formdata=document.getElementById("city").value;
+        formdata=document.getElementById("emailid").value;
+        return formdata
+    }
+function insertnewrecord(data){
+     var table=document.getElementById("employeelist").getElementsByTagName("tbody")[0];
+     var newrecord=table.insertRow(table.length);
+     cell1=newRow.insertcell(0);
+     cell1.innerHTML=data.name;
+     cell2=newRow.insertcell(1);
+     cell2.innerHTML=data.age;
+     cell3=newRow.insertcell(2);
+     cell3.innerHTML=data.city;
+     cell4=newRow.insertcell(3);
+     cell4.innerHTML=data.emailid;
+     cell4 = newRow.insertCell(4);
+    cell4.innerHTML = `<a onClick="onEdit(this)">Edit</a>
+                       <a onClick="onDelete(this)">Delete</a>`;
+}
+function resetform(){
+    document.getElementById("name").value="";
+    document.getElementById("age").value="";
+    document.getElementById("city").value="";
+    document.getElementById("emailid").value="";
+    selectedrow=null;
+}
+function edit(td){
+    selectedrow=td.parentElement.parentElement;
+    document.getElementById("name").value=selectedrow.cell[0].innerHTML;
+    document.getElementById("age").value=selectedrow.cell[1].innerHTML;
+    document.getElementById("city").value=selectedrow.cell[2].innerHTML;
+    document.getElementById("emailid").value=selectedrow.cell[3].innerHTML;
+}
+function updateRecord(formdata) {
+    selectedrow.cells[0].innerHTML = formdata.name;
+    selectedrow.cells[1].innerHTML = formdata.age;
+    selectedrow.cells[2].innerHTML = formdata.city;
+    selectedrow.cells[3].innerHTML = formdata.emailid;
+}
+
+function onDelete(td){
+    if(confirm("are you sure you want to delete?")){
+      row=  td.parentElement.parentElement;
+      document.getElementById("employeelist").deleterow("row.rowIndex")
+      resetform()
+    }
+}
+
+
+function validate(){
+    isValid=true;
+    if(document.getElementById("name").value == ""){
+        isValid=false;
+        document.getElementById("namevalidationerror").classList.remove("hide");
+    }else{
+        isValid = true;
+        if(!document.getElementById("namevalidationerror").classList.contains("hide"))
+        document.getElementById("namevalidationerror").classList.add("hide");
+    }
+    return isValid;
+}
+    </script>
+</html>

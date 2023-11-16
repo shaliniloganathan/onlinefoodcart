@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+ #form{
+    border: 1px solid;
+    display: table;
+    justify-content: center;
+
+ }
+ #div{
+    display: flex;
+    justify-content: center;
+ }
+ #form p{
+    align-items: center;
+ }
+
+ p{
+    display:table-row;
+   
+ }
+ label{
+    display: table-cell;
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 10px;
+}
+ input{
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 10px;
+    display: table-cell;
+ }
+ #submit{
+    text-align: center;
+ }
+ #reset{
+    text-align: center;
+
+ }
+ p input #submit{
+    display: flex;
+    justify-content: center;
+ }
+</style>
+<body>
+
+    <h1 id="title">Registration form</h1>
+
+    <div id="div">
+    <form name="Regform" onsubmit="formvalidation()" method="post" id="form">
+    <p>
+        <label id="name">Name</label>
+        <input type="text" placeholder="name" name="name" id="name">
+    </p>
+   
+    <p>
+        <label id="EmailId">Email Id</label>
+        <input type="text" placeholder="Email Id" name="EmailId" id="email">
+    </p>
+    <p>
+        <label id="password">password</label>
+        <input type="text" placeholder="password" name="password" id="password">
+    </p>
+    <p>
+        <label id="coverletter">coverletter</label>
+        <textarea cols="55" name="coverletter" id="coverletter"></textarea>
+    </p>
+    
+     <p >
+        <input type="submit" value="send" name="submit" id="submit"/>
+        <input type="reset" value="reset" name="reset" id="reset"/>
+     <p>
+</form>
+</div>
+</body>
+<script>
+    function formvalidation(){
+        var name=document.getElementById("name").value;
+        var emailid=document.getElementById("email").value;
+        var password=document.getElementById("password").value;
+        var textarea=document.getElementById("coverletter").value;
+
+        var regEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g; 
+        var regName = /\d+$/g;  
+        var regpass=/^[A-Za-z]\w{7,14}$/;      
+                        
+
+        if(name ==""|| regName.test(name)){
+            window.alert("please enter your name properly.");
+            name.focus();
+            return false;
+        }
+        if(email ==""|| regEmail.test(email)){
+            window.alert("please enter a valid email id.");
+            email.focus()
+            return false;
+            
+        }
+        if(password== "" || regpass.test(password)){
+            window.alert("please enter proper password.");
+            password.focus();
+            return false;
+
+        }
+        // if(textarea==""){
+
+        // }
+        return true
+    }
+
+   
+</script>
+</html>

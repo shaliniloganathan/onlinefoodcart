@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+<style>
+    .container {
+    display: grid;
+    grid-template-columns:25% 50% 25%;
+    min-height: 200vh;
+   background-color:pink;
+}
+.menu .list{
+   
+  background-color:white;
+  border: 1px solid white;
+  border-radius: 30px;
+  min-height: 200vh;
+  margin-right: 50px;
+  margin-left: 10px;
+  /* margin: auto; */
+
+  /* padding: 20px; */
+  padding-right: 30px;
+
+  
+}
+#header{
+    text-align: center;
+    padding: 20px;
+    color: rgb(103, 208, 173);
+}
+.menu{
+    padding: 0px;
+}
+.content .products{
+    min-height: 200vh;
+    border-radius: 30px;
+    background-color: white;
+    margin-right: 50px;
+}
+
+.menu .list ul li{
+list-style-type:none;
+padding: 10px;
+background-color: pink;
+border-radius: 40px;
+margin-bottom: 10px;
+
+}
+.menu .list ul{
+    align-content: center;
+}
+.menu .list ul li :hover{
+
+}
+
+h2{
+    margin-left: 40px;
+}
+.cart .listcart{
+    min-height: 200vh;
+    border-radius: 30px;
+    background-color: white;
+    font-size: 30px;
+}
+.cart{
+    margin-right: 50px;
+}
+
+.imgbox{
+    
+    display: flex;
+    justify-content: center;
+    height: 50vh;
+    overflow: hidden;
+
+}
+.images img{
+    height: 200px;
+    width: 150px;
+    margin-top: 50px;
+}
+.list2 .item{
+    padding: 10px;
+    column-gap: 20px;
+    row-gap: 20px;
+    margin: 10px;
+
+}
+
+ .pic img{
+    width: 200px;
+    display: grid;
+    padding: 40px;
+ }
+ .list2{
+    
+    display: grid;
+    grid-template-columns: auto auto;
+ }
+ .item{
+    padding: auto;
+ }
+</style>
+<body>
+    <div>
+        <h2>BAKERS STOP </h2>
+    </div>
+    <div class="container">
+
+        <div class="menu">
+            <h2>menu</h2>
+            <div class="list">
+                <ul>
+                    <li><i class="fa-solid fa-house"></i>Home</li>
+                    <li><a href="../../login.html"><i class="fa-solid fa-user"></i>User</a></li>
+                    <li><i class="fa-solid fa-heart"></i>Favourite</li>
+                 </ul>
+                 <ul>
+                    <li><i class="fa-solid fa-house"></i>Tiktok</li>
+                    <li><i class="fa-solid fa-user"></i>Facebook</li>
+                    <li><i class="fa-solid fa-heart"></i>Instagram</li>
+                 </ul>
+            </div>
+            
+        </div>
+        <div class="content">
+            <h2>content</h2>
+
+            <div class="products">
+                <h1  id="header">Lorem ipsum dolor sit amet.</h1>
+                <div class="imgbox">
+                 
+<div class="images">
+    <div class="slide">
+        <h3>BlackCurrent</h3>
+    <img src="../../../../assets/images/cup 1 (2).png">
+</div>
+<div class="slide">
+<h3>Strawberry Cheese Cake</h3>
+    <img src="../../../../assets/images/cup 2 (2).png">
+</div>
+    <div class="slide">
+        <h3>Chocolate</h3>
+    <img src="../../../../assets/images/cup 3 (2).png">
+</div>
+
+</div>
+
+</div>
+<div class="list2">
+    <div class="item" data-key="1">
+    <div class="pic">
+        <img src="../../../../assets/images/1.jpg">
+    </div>
+    <div class="productdetails">
+    <div class="title">lorem</div>
+    <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+    <div class="price">200</div>
+    <input type="number" class="count" min="1" value="1">
+    <button class="add">addtocart</button>
+    <button class=" danger" onclick="remove(1)"><i class="fa-solid fa-trash"></i></button>
+    </div>
+</div>
+<div class="item" data-key="2">
+    <div class="pic">
+        <img src="../../../../assets/images/2.jpg">
+    </div>
+    <div class="productdetails">
+    <div class="title">lorem</div>
+    <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+    <div class="price">200</div>
+    <input type="number" class="count" min="1" value="1">
+    <button class="add" onclick="addtocart()">addtocart</button>
+    <button class=" danger" onclick="remove(1)"><i class="fa-solid fa-trash"></i></button>
+    </div>
+</div>
+    <div class="item" data-key="3">
+    <div class="pic">
+        <img src="../../../../assets/images/3.jpg">
+    </div>
+    <div class="productdetails">
+    <div class="title">lorem</div>
+    <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+    <div class="price">200</div>
+    <input type="number" class="count" min="1" value="1">
+    <button class="add">addtocart</button>
+    <button class=" danger" onclick="remove(1)"><i class="fa-solid fa-trash"></i></button>
+    </div>
+</div>
+    <div class="item" data-key="4">
+    <div class="pic">
+
+        <img src="../../../../assets/images/4.jpg">
+    </div>
+    <div class="productdetails">
+    <div class="title">lorem</div>
+    <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+    <div class="price">200</div>
+    <input type="number" class="count" min="1" value="1">
+    <button class="add" >addtocart</button>
+    <button class=" danger" onclick="remove(1)"><i class="fa-solid fa-trash"></i></button>
+    </div>
+</div>
+</div>
+            </div>
+            
+        </div>
+        
+        <div class="cart" >
+            
+            <h2>cart</h2>
+
+            <div class="listcart">
+
+            </div>
+        </div>
+    </div>
+    <script>
+let button =document.querySelectorAll("add");
+let item=document.querySelectorAll(".item")
+let get=document.querySelector(".cart")
+let
+
+let array=[];
+window.onload=()=>{
+    array=JSON.parse(localStorage.getItem('array'))||[]
+    array.forEach(arr=>addtocart(arr))
+}
+
+button.addEventListner('click',()=>{
+    array.push(item.value);
+    localStorage.setItem('array',JSON.stringify(array))
+    addtocart(item.value);
+    item.value='';
+})
+function addtocart(arr){
+    let para=document.createElement('p')
+    para.innerHTML=arr
+    get.appendChild(para)
+   
+    para.addEventListener('click',()=>{
+        get.removeChild(para)
+        remove(arr)
+    })
+}
+function remove(arr){
+    let index=array.indexOf(arr)
+    if(index>-1)
+    array.splice(index,1)
+localStorage.setItem('arrays',JSON.stringify(array))
+}
+    </script>
+</body>
+</html>
